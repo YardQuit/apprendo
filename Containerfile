@@ -1,7 +1,4 @@
 
-FROM scratch AS ctx
-COPY / /
-
 ## 1. BUILD ARGS
 # These allow changing the produced image by passing different build args to adjust
 # the source from which your image is built.
@@ -51,6 +48,9 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
+
+FROM scratch AS ctx
+COPY / /
 
 ## run the build.sh script and commit
 COPY build.sh /tmp/build.sh
