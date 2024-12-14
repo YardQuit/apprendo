@@ -48,18 +48,17 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY build.sh /tmp/build.sh
-COPY system_files /tmp/system_files
-
 ## copy systemfiles such as repositories etc.
+COPY system_files /tmp/system_files
 RUN rsync -rvK /tmp/system_files / && \
     ostree container commit
 
 ## install from fedora repositories with dnf
-RUN dnf -y install helix fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd && \
+RUN dnf -y install helix 1password starship && \
     ostree container commit
 
 ## run the build.sh script and commit
+COPY build.sh /tmp/build.sh
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
