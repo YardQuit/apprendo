@@ -1,3 +1,9 @@
-fapolicyd
-fapolicyd-selinux
-rpm-plugin-fapolicyd
+pass
+fail2ban
+fail2ban-selinux
+fail2ban-systemd
+pam_yubico
+ykocli
+yubico-piv-tool
+borgbackup
+syncthing

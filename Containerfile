@@ -50,8 +50,14 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 ## copy dirs and files to /tmp directory
+COPY packages_desktop /tmp/packages_desktop
+COPY packages_develop /tmp/packages_develop
+COPY packages_fonts /tmp/packages_fonts
+COPY packages_multimedia /tmp/packages_multimedia
 COPY packages_personal /tmp/packages_personal
 COPY packages_security /tmp/packages_security
+COPY packages_temporary /tmp/packages_temporary
+COPY packabes_virtual /tmp/packages_virtual
 COPY system_files /tmp/system_files
 COPY build.sh /tmp/build.sh
 
