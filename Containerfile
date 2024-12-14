@@ -54,7 +54,7 @@ RUN rsync -rvK /tmp/system_files / && \
     ostree container commit
 
 ## install from fedora repositories with dnf
-COPY cplist /tmp/pkg_c
+COPY pkg_c /tmp/pkg_c
 RUN dnf --refresh upgrade && dnf -y install $(cat /tmp/pkg_c) && \
     ostree container commit
 
