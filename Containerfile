@@ -55,8 +55,6 @@ COPY scripts /tmp/scripts
 COPY system_files /tmp/system_files
 COPY build.sh /tmp/build.sh
 
-## add 1password
-RUN dnf -y install 1password
 
 ## copy repository files, run build.sh script and commit 
 RUN rsync -rvK /tmp/system_files/ / && \
