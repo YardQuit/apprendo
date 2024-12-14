@@ -49,8 +49,10 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
+COPY system_files /tmp/system_files
 
-RUN dnf -y install helix
+RUN dnf -y install helix fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd &&
+RUN rsync -rvK /tmp/system_files / &&
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
