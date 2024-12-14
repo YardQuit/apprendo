@@ -6,18 +6,18 @@ RELEASE="$(rpm -E %fedora)"
 
 ### Install packages
 rpm-ostree install \
-$(cat /tmp/packages_desktop) \
-$(cat /tmp/packages_develop) \
-$(cat /tmp/packages_fonts) \
-$(cat /tmp/packages_multimedia) \
-$(cat /tmp/packages_personal) \
-$(cat /tmp/packages_security) \
-$(cat /tmp/packages_temporary) \
-$(cat /tmp/packages_virtual)
+$(cat /tmp/packages/desktop) \
+$(cat /tmp/packages/develop) \
+$(cat /tmp/packages/fonts) \
+$(cat /tmp/packages/multimedia) \
+$(cat /tmp/packages/personal) \
+$(cat /tmp/packages/security) \
+$(cat /tmp/packages/temporary) \
+$(cat /tmp/packages/virtual)
 
 ### Run configuration scripts
-sh /tmp/kvm.sh
-sh /tmp/yubico.sh
+sh /tmp/scripts/kvm.sh
+sh /tmp/scripts/yubico.sh
 
 ### Enabling System Unit File(s)
 systemctl enable rpm-ostreed-automatic.timer
