@@ -4,9 +4,8 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-### Add system files
-rsync -rvK /ctx/system_files/ /
-
+### copy systemfiles
+/ctx/systemfiles.sh
 
 ### Install packages
 
