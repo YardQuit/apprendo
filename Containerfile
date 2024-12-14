@@ -56,7 +56,6 @@ RUN rsync -rvK /tmp/system_files/ / && \
 ## install from fedora repositories with dnf
 COPY pkg_c /tmp/pkg_c
 RUN dnf -y upgrade && dnf -y install $(cat /tmp/pkg_c) && \
-    ostree container commit
 
 ## run the build.sh script and commit
 COPY build.sh /tmp/build.sh
