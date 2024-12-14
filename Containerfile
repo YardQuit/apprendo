@@ -49,8 +49,13 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-FROM scratch AS ctx
-COPY / /
+## copy system files
+COPY system_files /tmp/system_files
+RUN rsync -rvK /tmp/system_files/ / && \
+    ostree container commit
+    
+## copy packages list
+COPY packages /tmp/packages
 
 ## run the build.sh script and commit
 COPY build.sh /tmp/build.sh
