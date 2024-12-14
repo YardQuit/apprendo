@@ -52,15 +52,18 @@ COPY build.sh /tmp/build.sh
 COPY system_files /tmp/system_files
 
 ## copy systemfiles such as repositories etc.
-RUN rsync -rvK /tmp/system_files /
+RUN rsync -rvK /tmp/system_files / && \
+    ostree container commit
 
 ## install from fedora repositories with dnf
-RUN dnf -y install helix fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd
+RUN dnf -y install helix fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd && \
+    ostree container commit
 
 ## run the build.sh script and commit
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
+
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs
 # - All RUN commands must end with ostree container commit
