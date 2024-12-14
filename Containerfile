@@ -51,9 +51,13 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY build.sh /tmp/build.sh
 COPY system_files /tmp/system_files
 
-RUN dnf -y install helix fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd &&
-RUN rsync -rvK /tmp/system_files / &&
+## copy systemfiles such as repositories etc.
+RUN rsync -rvK /tmp/system_files /
 
+## install from fedora repositories with dnf
+RUN dnf -y install helix fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd
+
+## run the build.sh script and commit
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
