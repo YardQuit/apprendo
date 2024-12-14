@@ -17,7 +17,7 @@ RELEASE="$(rpm -E %fedora)"
 # rpm-ostree install helix lf starship
 
 # this would install a package from rpmfusion
-# rpm-ostree install vlc
+rpm-ostree install $(cat /ctx/pkg_r)
 
 #### Example for enabling a System Unit File
 
