@@ -7,6 +7,9 @@ RELEASE="$(rpm -E %fedora)"
 ### checking out /ctx
 ls -la /ctx/
 
+### copy systemfiles
+rsync -rvK /ctx/system_files/ /
+
 ### Install packages
 rpm-ostree install $(cat /ctx/packages)
 
