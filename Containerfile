@@ -59,6 +59,8 @@ COPY packages_security /tmp/packages_security
 COPY packages_temporary /tmp/packages_temporary
 COPY packages_virtual /tmp/packages_virtual
 COPY system_files /tmp/system_files
+COPY yubico.sh /tmp/yubico.sh
+COPY kvm.sh /tmp/kvm.sh
 COPY build.sh /tmp/build.sh
 
 ## copy repository files, run build.sh script and commit 
