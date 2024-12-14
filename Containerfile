@@ -57,7 +57,7 @@ COPY packages_multimedia /tmp/packages_multimedia
 COPY packages_personal /tmp/packages_personal
 COPY packages_security /tmp/packages_security
 COPY packages_temporary /tmp/packages_temporary
-COPY packabes_virtual /tmp/packages_virtual
+COPY packages_virtual /tmp/packages_virtual
 COPY system_files /tmp/system_files
 COPY build.sh /tmp/build.sh
 
