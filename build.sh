@@ -10,7 +10,7 @@ curl --retry 3 -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo \
     https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-$(rpm -E %fedora)/ryanabx-cosmic-epoch-fedora-$(rpm -E %fedora).repo
 
 # atim STARSHIP repository
-curl --retry 3 -Lo /etc/yum.repos.d/atim-starship-fedora.repo \
+curl --retry 3 -Lo /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo \
     https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
 
 # virt VIRTIO-WIN repository
