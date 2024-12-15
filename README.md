@@ -38,7 +38,7 @@ Use the following command to install fapolicyd, its SELinux module, and a plugin
 ```bash
 rpm-ostree install fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd
 ```
-Restart your system to ensure that the changes take effect:
+Restart your system for the changes take effect:
 ```bash
 reboot
 ```
