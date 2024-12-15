@@ -1,5 +1,3 @@
-# image-template
-
 # Purpose
 
 This repository is meant to be a quick setup and restore for my personal use.
@@ -23,5 +21,5 @@ rpm-ostree install fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd
 
 reboot
 
-sudo systemctl enable fapolicyd.service
+sudo systemctl enable --now fapolicyd.service
 ```
