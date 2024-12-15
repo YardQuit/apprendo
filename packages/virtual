@@ -18,3 +18,7 @@ edk2-ovmf
 libguestfs
 libguestfs-bash-completion
 python3-libguestfs
+podman
+podman-bootc
+podman-machine
+podman-compose
