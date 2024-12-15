@@ -1,0 +1,50 @@
+title: uBlue First Boot
+properties:
+  mode: "run-on-change"
+  path: "~/.config/yafti/last-run"
+actions:
+  pre:
+  - run: /full/path/to/bin --with --params
+  - run: /another/command run
+  - yafti.plugin.flatpak:
+      install: org.gnome.Calculator
+  post:
+  - run: /run/these/commands --after --all --screens
+screens:
+  first-screen:
+    source: yafti.screen.title
+    values:
+      title: "That was pretty cool"
+      icon: "/path/to/icon"
+      description: |
+        Time to play overwatch
+  applications:
+    source: yafti.screen.package
+    values:
+      title: Package Installation
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      groups:
+        Core:
+          description: Should be installed
+          packages:
+          - Calculator: org.gnome.Calculator
+          - Backup: org.gnome.World.PikaBackup
+        Gaming:
+          description: Entertainment
+          packages:
+          - SteamLink: com.valvesoftware.SteamLink
+          - YouTube: io.freetubeapp.FreeTube
+        Office:
+          description: Office and Administration
+          packages:
+          - LibreOffice: org.libreoffice.LibreOffice
+          - Calendar: org.gnome.Calendar
+          - RemoteConnect: org.gnome.Connections
+  final-screen:
+    source: yafti.screen.title
+    values:
+      title: "All done"
+      icon: "/path/to/icon"
+      description: |
+        Thanks for installing, join the community, next steps
