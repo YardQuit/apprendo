@@ -15,7 +15,7 @@ This image need YubiKey to enter sudo. To register a YubiKey:
 ykpamcfg -2
 ```
 
-To install fapolicyd:
+To install, enable and start fapolicyd:
 ```bash
 rpm-ostree install fapolicyd fapolicyd-selinux rpm-plugin-fapolicyd
 
