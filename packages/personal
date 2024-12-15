@@ -6,16 +6,12 @@ stow
 stow-doc
 texinfo
 tldr
-yum-utils
 ptyxis
 inxi
 fastfetch
 fzf
 sshfs
 dislocker
-pinentry-qt
-pinentry-tty
-pinentry-emacs
 translate-shell
 lm_sensors
 lshw
@@ -29,3 +25,4 @@ btop
 solaar
 solaar-doc
 solaar-udev
+dnf-utils
