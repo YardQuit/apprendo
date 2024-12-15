@@ -28,3 +28,5 @@ systemctl enable fstrim.timer
 
 ### Disabling System Unit File(s)
 systemctl disable cosmic-greeter.service
+
+flatpak -y install --system $(cat /tmp/flatpaks)
