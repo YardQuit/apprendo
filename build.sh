@@ -3,6 +3,9 @@
 set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
+### install flatpaks
+flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak -y install --system $(cat /tmp/packages/flatpaks)
 
 ### Install packages
 rpm-ostree install \
@@ -28,6 +31,3 @@ systemctl enable fstrim.timer
 
 ### Disabling System Unit File(s)
 systemctl disable cosmic-greeter.service
-flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak -y install --system $(cat /tmp/packages/flatpaks)
