@@ -21,7 +21,6 @@ sh /tmp/scripts/yubico.sh
 
 ### Enabling System Unit File(s)
 systemctl enable rpm-ostreed-automatic.timer
-systemctl enable fail2ban.service
 systemctl enable tuned.service
 systemctl enable docker.service
 systemctl enable podman.socket
