@@ -1,8 +1,7 @@
-app/com.github.wwmm.easyeffects/stable
-app/hu.irl.cameractrls/stable
-app/io.freetubeapp.FreeTube/stable
-app/org.fedoraproject.MediaWriter/stable
-app/org.gnome.Connections/stable
-app/org.gnome.World.PikaBackup/stable
-app/org.libreoffice.LibreOffice/stable
-app/us.zoom.Zoom/x86_64/stable
+hu.irl.cameractrls
+io.freetubeapp.FreeTube
+org.fedoraproject.MediaWriter
+org.gnome.Connections
+org.gnome.World.PikaBackup
+org.libreoffice.LibreOffice
+us.zoom.Zoom
