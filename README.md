@@ -42,6 +42,10 @@ Restart your system to ensure that the changes take effect:
 ```bash
 reboot
 ```
+Configure the fapolicyd to allow repository packages, else fapolicy will allow everything.
+```bash
+sudo sed -i 's/integrity = none/integrity = sha256/g' /etc/fapolicyd/fapolicyd.conf
+```
 Configure the fapolicyd service to start automatically on boot and enable it immediately.
 ```bash
 sudo systemctl enable --now fapolicyd.service
