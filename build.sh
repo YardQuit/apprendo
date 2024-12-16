@@ -5,7 +5,7 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 ### install flatpaks
 flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak -y install --system $(cat /tmp/packages/flatpaks)
+# flatpak -y install --system $(cat /tmp/packages/flatpaks)
 
 ### Install packages
 rpm-ostree install \
