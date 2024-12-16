@@ -15,6 +15,7 @@ $(cat /tmp/packages/fonts) \
 $(cat /tmp/packages/multimedia) \
 $(cat /tmp/packages/personal) \
 $(cat /tmp/packages/security) \
+$(cat /tmp/packages/temporary) \
 $(cat /tmp/packages/virtual)
 
 ### Run configuration scripts
