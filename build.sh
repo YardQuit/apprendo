@@ -33,9 +33,10 @@ systemctl enable fstrim.timer
 systemctl disable cosmic-greeter.service
 
 ### Clean Up
-rm -rf /tmp/packages
-rm -rf /tmp/scripts
-rm -rf /tmp/system_files
+shopt -s extglob
+rm -rf /tmp/* || true
+rm -rf /var/!(cache)
+rm -rf /var/cache/!(rpm-ostree)
 rm -rf /etc/yum.repos.d/1password.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:gmaglione:podman-bootc.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:pennbauman:ports.repo
