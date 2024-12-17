@@ -1,0 +1,15 @@
+# RPM-SPEC
+[language-server.rpm-spec]
+command = "python3"
+args = ["-m rpm_spec_language_server", "--stdio"]
+
+# RPM-SPEC
+[[language]]
+name = "rpm-spec"
+scope = "source.spec"
+auto-format = false
+language-servers = [{ name = "rpm-spec" }]
+indent = { tab-width = 4, unit = "    " }
+file-types = ["spec"]
+rulers = [80]
+
