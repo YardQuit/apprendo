@@ -39,9 +39,6 @@ newline = "none"
 space = " "
 tab= " "
 tabpad = " "
-# space = "·"
-# tab= "-"
-# tabpad = "-"
 
 [editor.indent-guides]
 render = true
@@ -94,15 +91,6 @@ u = "switch_to_lowercase"
 p = ":sh pwd"
 j = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 k = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-# backspace = [":write", ":sh wezterm start --new-tab --cwd $(pwd)"]
-# backspace = [":write", ":sh zellij action new-pane --floating --x 10% --y 15% --height 70% --width 80% --name 'Originated from: HELIX' --close-on-exit -- bash"]
-# backspace = [":write", ":sh zellij action new-pane --floating --name 'Originated from: HELIX' -- bash"]
-# backspace = [":write", ":sh ~/.config/custm/scripts/sys_zellij_parent_check.sh"]
-# backspace = [":write", ":sh gnome-terminal"]
-# backspace = [":write", ":sh gnome-terminal --tab"]
-# backspace = [":write", ":sh alacritty --command sh"]
-# backspace = [":write", ":sh $TERM --app-id='scratchpad_foot' &disown"]
-# backspace = [":write", ":sh foot --app-id='float_foot'"]
 
 [keys.normal.backspace.t]
 s = ":toggle auto-save"
@@ -114,7 +102,6 @@ w = ":toggle soft-wrap.enable"
 [keys.normal.backspace.i]
 D = ":insert-output TZ=Pacific/Auckland date"
 d = ":insert-output date"
-l = ":insert-output python3 ~/.config/helix/scripts/ipsum.py"
 
 [keys.normal.backspace.i.t]
 p = ":insert-output cat ~/.config/helix/templates/template.python"
