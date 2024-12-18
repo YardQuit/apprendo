@@ -3,7 +3,7 @@
 
 ## Purpose
 
-This repository is meant to be used to learn and test varous ublue builds.<br>
+This repository is meant to be used to learn and test various ublue builds.<br>
 Beware, this repository can at any time disapair or break.
 
 ## Install
