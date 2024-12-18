@@ -9,6 +9,8 @@ rsync -rvK /tmp/system_files/ /
 
 ### Create system directory structues
 mkdir -p /var/lib/alternatives
+mkdir -p /var/lib/fapolicyd
+ls /var/lib/fa*
 
 ### Install packages
 dnf install \
