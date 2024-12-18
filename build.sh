@@ -27,7 +27,7 @@ $(cat /tmp/packages/virtual)
 
 ### Run post packages install, configuration scripts
 sh /tmp/scripts/kvm.sh
-sh /tmp/scripts/yubico.sh
+# sh /tmp/scripts/yubico.sh
 
 ### Enabling System Unit File(s)
 systemctl enable rpm-ostreed-automatic.timer

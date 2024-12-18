@@ -11,7 +11,7 @@ Rebase from an Fedora Atomic distribution:
 rpm-ostree rebase ostree-image-signed:docker://ghcr.io/yardquit/atomic_custm:latest
 ```
 
-Rebase from an ublue based atomic distribution:
+Rebase from an ublue atomic distribution:
 ```bash
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/yardquit/atomic_custm:latest
 ```
