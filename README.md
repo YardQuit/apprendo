@@ -38,7 +38,7 @@ systemctl reboot
 ## Post Installs
 
 ### 1. YubiKey
-To access the system using sudo, you will need to use your YubiKey as an additional factor of authentication. 
+You can use your YubiKey as an additional factor of sudo authentication. 
 YubiKey Registration: 
 Follow the below instructions to complete the registration process.
 ```bash
