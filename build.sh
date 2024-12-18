@@ -3,9 +3,12 @@
 set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
-### install flatpaks
-# flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# flatpak -y install --system $(cat /tmp/packages/flatpaks)
+
+### Copy pre-configured system files
+rsync -rvK /tmp/system_files/ /
+
+### Create system directory structues
+mkdir -p /var/lib/alternatives
 
 ### Install packages
 dnf install \
@@ -18,7 +21,7 @@ $(cat /tmp/packages/security) \
 $(cat /tmp/packages/temporary) \
 $(cat /tmp/packages/virtual)
 
-### Run configuration scripts
+### Run post packages install, configuration scripts
 sh /tmp/scripts/kvm.sh
 sh /tmp/scripts/yubico.sh
 
