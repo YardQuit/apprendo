@@ -3,7 +3,8 @@
 
 ## Purpose
 
-This repository is meant to be a quick setup and restore for my personal use.
+This repository is meant to be used to learn and test varous ublue builds.<br>
+Beware, this repository can at any time disapair or break.
 
 ## Install
 ### rpm-ostree rebase
