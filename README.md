@@ -9,7 +9,7 @@ This repository is meant to be a quick setup and restore for my personal use.
 ### rpm-ostree rebase
 Rebase from an Fedora Atomic distribution:
 ```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/yardquit/atomic_custm:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/yardquit/apprendo:latest
 ```
 Restart your system for the changes take effect:
 ```bash
@@ -17,7 +17,7 @@ systemctl reboot
 ```
 Rebase from unsigned to signed:
 ```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/yardquit/atomic_custm:latest
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/yardquit/apprendo:latest
 ```
 Restart your system for the changes take effect:
 ```bash
@@ -27,7 +27,7 @@ systemctl reboot
 ### bootc switch
 Rebase from an ublue atomic distribution:
 ```bash
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/yardquit/atomic_custm:latest
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/yardquit/apprendo:latest
 ```
 
 Restart your system for the changes take effect:
