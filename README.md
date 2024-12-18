@@ -38,8 +38,8 @@ systemctl reboot
 ## Post Installs
 
 ### 1. YubiKey
-You can use your YubiKey as an additional factor of sudo authentication. 
-YubiKey Registration: 
+You can use your YubiKey as an additional factor of sudo authentication.<br>
+YubiKey Registration:<br>
 Follow the below instructions to complete the registration process.
 ```bash
 # Insert your YubiKey into a compatible USB port on your computer.
