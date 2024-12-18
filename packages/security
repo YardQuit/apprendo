@@ -15,3 +15,6 @@ selinux-policy-mls
 selinux-policy-targeted
 setools-console
 setools-console-analyses
+fapolicyd
+fapolicyd-selinux
+rpm-plugin-fapolicyd

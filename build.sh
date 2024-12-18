@@ -10,7 +10,9 @@ rsync -rvK /tmp/system_files/ /
 ### Create system directory structues
 mkdir -p /var/lib/alternatives
 mkdir -p /var/lib/fapolicyd
+mkdir -p /var/lib/swtpm-localca
 ls /var/lib/fa*
+ls /var/lib/swtpm*
 
 ### Install packages
 dnf install \
