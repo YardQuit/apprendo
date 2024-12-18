@@ -6,8 +6,12 @@
 This repository is meant to be a quick setup and restore for my personal use.
 
 ## Install
+Rebase from an Fedora Atomic distribution:
+```bash
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/yardquit/atomic_custm:latest
+```
 
-To rebase from an atomic distribution:
+Rebase from an ublue based atomic distribution:
 ```bash
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/yardquit/atomic_custm:latest
 ```
