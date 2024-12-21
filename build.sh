@@ -5,17 +5,13 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 ### Set hostname
-hostnamectl hostname $(date +"%y%m")
+echo FA$(date +"%y%m") | tee /etc/hostname
 
 ### Copy pre-configured system files
 rsync -rvK /tmp/system_files/ /
 
 ### Create system directory structues
 mkdir -p /var/lib/alternatives
-mkdir -p /var/lib/fapolicyd
-mkdir -p /var/lib/swtpm-localca
-ls /var/lib/fa*
-ls /var/lib/swtpm*
 
 ### Install packages
 dnf install \
