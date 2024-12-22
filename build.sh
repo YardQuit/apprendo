@@ -21,9 +21,6 @@ $(cat /tmp/packages/security) \
 $(cat /tmp/packages/temporary) \
 $(cat /tmp/packages/virtual)
 
-### Install language servers with Node Package Manager
-npm -y --global install $(cat /tmp/packages/nodepackages)
-
 ### Disabling System Unit File(s)
 systemctl disable cosmic-greeter.service
 
