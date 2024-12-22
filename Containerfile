@@ -51,7 +51,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 ## copy dirs and files to /tmp directory
 COPY packages /tmp/packages
-COPY scripts /tmp/scripts
+# COPY scripts /tmp/scripts
 COPY system_files /tmp/system_files
 COPY build.sh /tmp/build.sh
 
