@@ -44,19 +44,9 @@ echo 'options kvm_intel nested=1' > /etc/modprobe.d/kvm_intel.conf
 cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
 sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
 
-
-###############################################################################
-# START - ONLY FOR MY PERSONAL USE
-###############################################################################
-
 ### Add yubico challange for sudo (DISABLED)
 # cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
 # sed -i '/PAM-1.0/a\auth       required     pam_yubico.so mode=challenge-response' /etc/pam.d/sudo
-
-###############################################################################
-# END - ONLY FOR MY PERSONAL USE
-###############################################################################
-
 
 ### Clean Up
 shopt -s extglob
