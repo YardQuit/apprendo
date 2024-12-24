@@ -1,4 +1,4 @@
-- name: Build ISO
+- name: apprendo
   uses: jasonn3/build-container-installer@main
   id: build
   with:
