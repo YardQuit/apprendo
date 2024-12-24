@@ -11,38 +11,38 @@ rsync -rvK /tmp/system_files/ /
 mkdir -p /var/lib/alternatives
 
 ### Install repository package(s)
-dnf install \
-$(cat /tmp/packages/desktop) \
-$(cat /tmp/packages/develop) \
-$(cat /tmp/packages/fonts) \
-$(cat /tmp/packages/multimedia) \
-$(cat /tmp/packages/personal) \
-$(cat /tmp/packages/security) \
-$(cat /tmp/packages/temporary) \
-$(cat /tmp/packages/virtual)
+# dnf install \
+# $(cat /tmp/packages/desktop) \
+# $(cat /tmp/packages/develop) \
+# $(cat /tmp/packages/fonts) \
+# $(cat /tmp/packages/multimedia) \
+# $(cat /tmp/packages/personal) \
+# $(cat /tmp/packages/security) \
+# $(cat /tmp/packages/temporary) \
+# $(cat /tmp/packages/virtual)
 
 ### Disabling System Unit File(s)
-systemctl disable cosmic-greeter.service
+# systemctl disable cosmic-greeter.service
 
 ### Enabling System Unit File(s)
-systemctl enable rpm-ostreed-automatic.timer
-systemctl enable tuned.service
-systemctl enable docker.service
-systemctl enable podman.socket
-systemctl enable fstrim.timer
+# systemctl enable rpm-ostreed-automatic.timer
+# systemctl enable tuned.service
+# systemctl enable docker.service
+# systemctl enable podman.socket
+# systemctl enable fstrim.timer
 
 ### Enable virtualization Unit File(s)
-for drv in qemu interface network nodedev nwfilter secret storage; do
-    systemctl enable virt${drv}d.service;
-    systemctl enable virt${drv}d{,-ro,-admin}.socket;
-done
+# for drv in qemu interface network nodedev nwfilter secret storage; do
+#     systemctl enable virt${drv}d.service;
+#     systemctl enable virt${drv}d{,-ro,-admin}.socket;
+# done
 
 ### Enable nested virtualization
-echo 'options kvm_intel nested=1' > /etc/modprobe.d/kvm_intel.conf
+# echo 'options kvm_intel nested=1' > /etc/modprobe.d/kvm_intel.conf
 
 ### Change default firewalld zone
-cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
-sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
+# cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
+# sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
 
 ### Add yubico challange for sudo (DISABLED)
 # cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
