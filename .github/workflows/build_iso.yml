@@ -1,5 +1,5 @@
 ---
-  name: apprendo
+- name: apprendo
   uses: jasonn3/build-container-installer@main
   id: build
   with:
@@ -11,7 +11,7 @@
     variant: ${{ env.VARIANT }}
     iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_TAG }}-${{ env.VERSION }}.iso
 
--  name: Upload ISO as artifact
+- name: Upload ISO as artifact
   id: upload
   uses: actions/upload-artifact@v4
   with:
@@ -22,3 +22,4 @@
     if-no-files-found: error
     retention-days: 0
     compression-level: 0
+---
