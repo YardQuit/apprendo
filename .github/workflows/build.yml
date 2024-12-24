@@ -163,8 +163,8 @@ jobs:
         with:
           arch: ${{ env.ARCH}}
           image_name: ${{ env.MY_IMAGE_NAME}}
-          image_repo: ${{ env.IMAGE_REPO}}
-          image_tag: ${{ env.IMAGE_TAG }}
+          image_repo: ${{ env.MY_IMAGE_REPO}}
+          image_tag: ${{ env.MY_IMAGE_TAG }}
           version: ${{ env.VERSION }}
           variant: ${{ env.VARIANT }}
           iso_name: ${{ env.MY_IMAGE_NAME }}-${{ env.IMAGE_TAG }}-${{ env.VERSION }}.iso
