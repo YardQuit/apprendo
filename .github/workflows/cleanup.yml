@@ -1,25 +1,24 @@
     name: Cleanup
     on:
       schedule:
-        - cron: '05 7 * * *'
+        - cron: '05 11 * * *'
       workflow_dispatch:
 
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
 
     jobs:
-      delete-older-than-30:
+      delete-older-than-15:
         runs-on: ubuntu-latest
         permissions:
           packages: write
         steps:
-          - name: Delete Images Older Than 30 Days
+          - name: Delete Images Older Than 15 Days
             uses: dataaxiom/ghcr-cleanup-action@v1.0.14
             with:
               token: ${{ secrets.GITHUB_TOKEN }}
-              older-than: 30 days
+              older-than: 15 days
               delete-orphaned-images: true
               #keep-n-tagged: 7
               #keep-n-untagged: 7
               #dry-run: true
-
