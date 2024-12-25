@@ -8,16 +8,16 @@
       group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
 
     jobs:
-      delete-older-than-15:
+      delete-older-than-5:
         runs-on: ubuntu-latest
         permissions:
           packages: write
         steps:
-          - name: Delete Images Older Than 15 Days
+          - name: Delete Images Older Than 5 Days
             uses: dataaxiom/ghcr-cleanup-action@v1.0.14
             with:
               token: ${{ secrets.GITHUB_TOKEN }}
-              older-than: 15 days
+              older-than: 5 days
               delete-orphaned-images: true
               #keep-n-tagged: 7
               #keep-n-untagged: 7
