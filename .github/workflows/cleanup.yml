@@ -14,7 +14,8 @@
           packages: write
         steps:
           - name: Delete Images Older Than 5 Days
-            uses: dataaxiom/ghcr-cleanup-action@v1.0.14
+            uses: ublue/ghcr-cleanup-action@v1.0.14
+            # uses: dataaxiom/ghcr-cleanup-action@v1.0.14
             with:
               token: ${{ secrets.GITHUB_TOKEN }}
               older-than: 5 days
