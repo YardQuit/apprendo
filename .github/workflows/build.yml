@@ -182,4 +182,27 @@ jobs:
       #     if-no-files-found: error
       #     retention-days: 0
       #     compression-level: 0
+    name: Cleanup Old Images
+    # on:
+    #   schedule:
+    #     - cron: '05 7 * * *'  # 7:05 UTC everyday
+    #   workflow_dispatch:
 
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+
+    jobs:
+      delete-older-than-90:
+        runs-on: ubuntu-latest
+        permissions:
+          packages: write
+        steps:
+          - name: Delete Images Older Than 30 Days
+            uses: dataaxiom/ghcr-cleanup-action@v1.0.14
+            with:
+              token: ${{ secrets.GITHUB_TOKEN }}
+              older-than: 30 days
+              delete-orphaned-images: true
+              #keep-n-tagged: 7
+              #keep-n-untagged: 7
+              #dry-run: true
