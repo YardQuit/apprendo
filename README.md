@@ -1,4 +1,4 @@
-[![build](https://github.com/YardQuit/apprendo/actions/workflows/build.yml/badge.svg)](https://github.com/YardQuit/apprendo/actions/workflows/build.yml)
+[![build-ublue-custom](https://github.com/YardQuit/apprendo/actions/workflows/build.yml/badge.svg)](https://github.com/YardQuit/apprendo/actions/workflows/build.yml)
 [![Cleanup](https://github.com/YardQuit/apprendo/actions/workflows/cleanup.yml/badge.svg)](https://github.com/YardQuit/apprendo/actions/workflows/cleanup.yml)
 
 # Universal Blue Custom Image
