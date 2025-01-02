@@ -48,6 +48,13 @@ sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firew
 # cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
 # sed -i '/PAM-1.0/a\auth       required     pam_yubico.so mode=challenge-response' /etc/pam.d/sudo
 
+### Disable ipv6 stack
+cat <<EOF | tee -a /etc/sysctl.conf
+net.ipv6.conf.all.disable_ipv6=1
+net.ipv6.conf.default.disable_ipv6=1
+net.ipv6.conf.lo.disable_ipv6=1
+EOF
+
 ### Clean Up
 shopt -s extglob
 rm -rf /tmp/* || true
