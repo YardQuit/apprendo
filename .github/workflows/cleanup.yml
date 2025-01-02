@@ -20,6 +20,6 @@
               packages: apprendo
               older-than: 5 days
               delete-orphaned-images: true
-              # keep-n-tagged: 5
-              # keep-n-untagged: 5
+              keep-n-tagged: 5
+              keep-n-untagged: 5
               #dry-run: true
